@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<br>
+ <table class="table table-dark table-striped">
+  <thead>
+    <tr>
+
+      <th scope="col">Pojazd</th>
+      <th scope="col">Liczba kursów</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for pojazd, liczba in kursy %}
+  {% if liczba > 0 %}
+
+    <tr>
+
+      <td>{{ pojazd }}</td>
+      <td>{{ liczba }}</td>
+    </tr>
+  {% endif %}
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
