@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+def pojazdy (request):
+    return render(request, 'pojazdy/pojazdy.html')
+
+def dodaj (request):
+    return render(request, 'pojazdy/dodaj.html')
+

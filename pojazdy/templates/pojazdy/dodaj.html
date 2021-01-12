@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<br>
+<h1>Dodaj pojazd: </h1>
+<br/>
+<form method="POST" action="{% url 'dodaj' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="input-group mb-3">
+        <input placeholder="Nazwa pojazdu" class="form-control" type="text" name="nazwa"/>
+    </div>
+
+    <div class="input-group mb-3">
+        <input placeholder="Marka" class="form-control" type="text" name="marka"/>
+    </div>
+
+    <div class="input-group mb-3">
+        <input placeholder="Model" class="form-control" type="text" name="model"/>
+    </div>
+
+    <div class="input-group mb-3">
+        <input placeholder="Numer rejestracyjny" class="form-control" type="text" name="rejestracja"/>
+    </div>
+
+    <div class="input-group mb-3">
+        <input placeholder="Numer VIN" class="form-control" type="text" name="vin"/>
+    </div>
+
+    <div class="form-group row">
+  <label for="example-date-input" class="col-2 col-form-label">Data przeglądu</label>
+  <div class="col-10">
+    <input class="form-control" type="date" value="2020-02-01" id="example-date-input" name="przeglad">
+  </div>
+    </div>
+    <br/>
+    <input class="btn btn-dark" type="submit" value="Dodaj pojazd!"/>
+
+</form>
+
+{% endblock %}
