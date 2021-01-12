@@ -1,6 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+<br/>
+ <table class="table table-dark table-striped">
+  <thead>
+    <tr>
 
-pojazdy
+      <th scope="col">Nazwa</th>
+      <th scope="col">Marka</th>
+        <th scope="col">Model</th>
+        <th scope="col">Nr rejestracyjny</th>
+        <th scope="col">VIN</th>
+        <th scope="col">Przegląd</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for pojazd in pojazdy.all %}
+
+  <tr>
+
+      <td>{{ pojazd.nazwa }}</td>
+      <td>{{ pojazd.marka }}</td>
+      <td>{{ pojazd.model }}</td>
+      <td>{{ pojazd.rejestracja }}</td>
+      <td>{{ pojazd.vin }}</td>
+      <td>{{ pojazd.pub_date_pretty }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+
 {% endblock %}

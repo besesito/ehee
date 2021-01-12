@@ -3,7 +3,8 @@ from .models import Pojazd
 from django.utils import timezone
 
 def pojazdy (request):
-    return render(request, 'pojazdy/pojazdy.html')
+    lista_pojazdow = Pojazd.objects
+    return render(request, 'pojazdy/pojazdy.html', {'pojazdy':lista_pojazdow})
 
 def dodaj (request):
     if request.method == 'POST':

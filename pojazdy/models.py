@@ -12,3 +12,5 @@ class Pojazd(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.nazwa
+    def pub_date_pretty(self):
+        return self.przeglad.strftime("%d-%m-%Y")
