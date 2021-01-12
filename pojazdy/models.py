@@ -10,6 +10,3 @@ class Pojazd(models.Model):
     przeglad = models.DateField()
     data_dodania = models.DateTimeField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    def pub_date_pretty(self):
-        return self.pub_date.strftime("%d-%m-%Y")
