@@ -17,6 +17,7 @@
 <br>
 <h1>Dodaj pojazd: </h1>
 <br/>
+<div class="col-6">
 <form method="POST" action="{% url 'dodaj' %}" enctype="multipart/form-data">
     {% csrf_token %}
 
@@ -50,5 +51,6 @@
     <input class="btn btn-dark" type="submit" value="Dodaj pojazd!"/>
 
 </form>
+</div>
 
 {% endblock %}
