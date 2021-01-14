@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from .models import Pojazd
 from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="/login")
 def pojazdy (request):
     lista_pojazdow = Pojazd.objects
     return render(request, 'pojazdy/pojazdy.html', {'pojazdy':lista_pojazdow})
 
+@login_required(login_url="/login")
 def dodaj (request):
     if request.method == 'POST':
         if request.POST['nazwa']:

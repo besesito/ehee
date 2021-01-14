@@ -1,12 +1,16 @@
 from django.shortcuts import render
 import operator
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="/login")
 def home(request):
     return render(request, 'raport/home.html')
 
+@login_required(login_url="/login")
 def raport(request):
     return render(request, 'raport/raport.html')
 
+@login_required(login_url="/login")
 def wynik(request):
     if request.method == 'POST':
         fulltext = request.POST['fulltext']
