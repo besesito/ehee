@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Pojazd
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
+import datetime
 
 @login_required(login_url="/login")
 def pojazdy (request):
@@ -18,9 +19,9 @@ def dodaj (request):
             pojazd.model = request.POST['model']
             pojazd.rejestracja = request.POST['rejestracja']
             pojazd.przeglad = request.POST['przeglad']
+            pojazd.tachograf = request.POST['tachograf']
             pojazd.vin = request.POST['vin']
             pojazd.data_dodania = timezone.datetime.now()
-            pojazd.user = request.user
             pojazd.save()
             return render(request, 'pojazdy/dodaj.html', {'info' : 'Pojazd został pymyślnie dodany'})
         return render(request, 'pojazdy/dodaj.html', {'danger' : 'Proszę wpisać nazwę pojazdu'})

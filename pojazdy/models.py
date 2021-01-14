@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+import datetime
 
 class Pojazd(models.Model):
     nazwa = models.TextField()
@@ -8,9 +8,20 @@ class Pojazd(models.Model):
     rejestracja = models.TextField()
     vin = models.TextField()
     przeglad = models.DateField()
+    tachograf = models.DateField()
     data_dodania = models.DateTimeField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def dni_przeglad(self):
+        today = datetime.date.today()
+        days = self.przeglad - today
+        return "{} dni".format(days.days)
+
+
+
+
     def __str__(self):
         return self.nazwa
     def pub_date_pretty(self):
         return self.przeglad.strftime("%d-%m-%Y")
+    def pub_date_tacho(self):
+        return self.tachograf.strftime("%d-%m-%Y")
