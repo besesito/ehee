@@ -37,6 +37,16 @@
           font-size: 3.5rem;
         }
       }
+            body {
+  background: url('http://127.0.0.1:8000/static/tapeta.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+body {
+  color: #ed1c24;
+}
     </style>
 </head>
 <header>
@@ -49,20 +59,18 @@
 <br>
 <div class="container text-center">
     {% if info %}
-<div class="alert alert-danger text-center" role="alert">
-    <h3>{{ info }}</h3>
-</div>
+    <h2>{{ info }}</h2>
+
 {% endif %}
-    <img height="200" src="{% static 'logo.png' %}">
-<form method="POST" action="{% url 'login' %}">
+    <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
     Login:
     <br/>
-    <input type="text", name="username"/>
+    <input type="text" name="username"/>
     <br/>
     Hasło:
     <br/>
-    <input type="password", name="password"/>
+    <input type="password" name="password"/>
     <br/>
     <br/>
     <input class="btn btn-dark" type="submit" value="Zaloguj"/>

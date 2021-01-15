@@ -12,4 +12,4 @@ def login(request):
         else:
             return render(request, 'login/login.html', {'info': "😂 Skleroza? Próbuj dalej! 🤣"})
     else:
-        return render(request, 'login/login.html', {'info':'⛔Nie tak prędko!! Zaloguj się⛔'})
+        return render(request, 'login/login.html')
