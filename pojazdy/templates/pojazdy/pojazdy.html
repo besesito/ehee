@@ -14,6 +14,8 @@
         <th scope="col">VIN</th>
         <th scope="col">Przegląd</th>
         <th scope="col">Dni do przegladu</th>
+        <th scope="col">Legalizacja</th>
+        <th scope="col">Dni do legalizacji</th>
     </tr>
   </thead>
   <tbody>
@@ -26,8 +28,10 @@
       <td>{{ pojazd.model }}</td>
       <td>{{ pojazd.rejestracja }}</td>
       <td>{{ pojazd.vin }}</td>
-      <td>{{ pojazd.pub_date_pretty }}</td>
+      <td>{{ pojazd.date_przeglad }}</td>
       <td>{{ pojazd.dni_przeglad }}</td>
+      <td>{{ pojazd.date_tacho }}</td>
+      <td>{{ pojazd.dni_tacho }}</td>
   </tr>
   {% endfor %}
   </tbody>

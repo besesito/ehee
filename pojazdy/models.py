@@ -10,18 +10,17 @@ class Pojazd(models.Model):
     przeglad = models.DateField()
     tachograf = models.DateField()
     data_dodania = models.DateTimeField()
-
     def dni_przeglad(self):
         today = datetime.date.today()
         days = self.przeglad - today
         return "{} dni".format(days.days)
-
-
-
-
+    def dni_tacho(self):
+        today = datetime.date.today()
+        days = self.tachograf - today
+        return "{} dni".format(days.days)
     def __str__(self):
         return self.nazwa
-    def pub_date_pretty(self):
+    def date_przeglad(self):
         return self.przeglad.strftime("%d-%m-%Y")
-    def pub_date_tacho(self):
+    def date_tacho(self):
         return self.tachograf.strftime("%d-%m-%Y")
