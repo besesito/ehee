@@ -10,6 +10,6 @@ def login(request):
             auth.login(request, user)
             return render(request, 'raport/home.html', {'info': 'Siemanko {} mam nadzieję że masz wspaniały dziś dzień! 👍'.format(username)})
         else:
-            return render(request, 'login/login.html', {'info': "Skleroza? Próbuj dalej! 🤣😂"})
+            return render(request, 'login/login.html', {'info': "😂 Skleroza? Próbuj dalej! 🤣"})
     else:
-        return render(request, 'login/login.html', {'info':'📢 Nie tak prędko!! Zaloguj się 📢'})
+        return render(request, 'login/login.html', {'info':'⛔Nie tak prędko!! Zaloguj się⛔'})

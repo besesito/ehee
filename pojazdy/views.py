@@ -2,11 +2,13 @@ from django.shortcuts import render
 from .models import Pojazd
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-import datetime
+import operator
 
 @login_required(login_url="/login")
 def pojazdy (request):
-    lista_pojazdow = Pojazd.objects
+    lista_pojazdow = Pojazd.objects.order_by('przeglad')
+
+
     return render(request, 'pojazdy/pojazdy.html', {'pojazdy':lista_pojazdow})
 
 @login_required(login_url="/login")
