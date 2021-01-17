@@ -7,21 +7,33 @@ class Pojazd(models.Model):
     model = models.TextField(blank=True)
     rejestracja = models.TextField(blank=True)
     vin = models.TextField(blank=True)
-    przeglad = models.DateField(default=datetime.date.today(), blank=True, null=True)
-    tachograf = models.DateField(default=datetime.date.today(), blank=True, null=True)
+    przeglad = models.DateField(blank=True, null=True)
+    tachograf = models.DateField(blank=True, null=True)
     picture = models.ImageField(blank=True)
 
     def dni_przeglad(self):
-        today = datetime.date.today()
-        days = self.przeglad - today
-        return "{} dni".format(days.days)
+        if self.przeglad == None:
+            pass
+        else:
+            today = datetime.date.today()
+            days = self.przeglad - today
+            return "{} dni".format(days.days)
     def dni_tacho(self):
-        today = datetime.date.today()
-        days = self.tachograf - today
-        return "{} dni".format(days.days)
+        if self.tachograf == None:
+            pass
+        else:
+            today = datetime.date.today()
+            days = self.tachograf - today
+            return "{} dni".format(days.days)
     def __str__(self):
         return self.nazwa
     def date_przeglad(self):
-        return self.przeglad.strftime("%d-%m-%Y")
+        if self.przeglad == None:
+            pass
+        else:
+            return self.przeglad.strftime("%d-%m-%Y")
     def date_tacho(self):
-        return self.tachograf.strftime("%d-%m-%Y")
+        if self.tachograf == None:
+            pass
+        else:
+            return self.tachograf.strftime("%d-%m-%Y")

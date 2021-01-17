@@ -17,13 +17,17 @@ def dodaj (request):
             pojazd.marka = request.POST['marka']
             pojazd.model = request.POST['model']
             pojazd.rejestracja = request.POST['rejestracja']
-            pojazd.przeglad = request.POST['przeglad']
-            pojazd.tachograf = request.POST['tachograf']
             pojazd.vin = request.POST['vin']
             try:
                 pojazd.picture = request.FILES['picture']
             except:
                 pass
+            pojazd.przeglad = request.POST['przeglad']
+            if pojazd.przeglad == "":
+                pojazd.przeglad = None
+            pojazd.tachograf = request.POST['tachograf']
+            if pojazd.tachograf == "":
+                pojazd.tachograf = None
             pojazd.save()
             return render(request, 'pojazdy/dodaj.html', {'info' : 'Pojazd został pymyślnie dodany'})
         return render(request, 'pojazdy/dodaj.html', {'danger' : 'Proszę wpisać nazwę pojazdu'})

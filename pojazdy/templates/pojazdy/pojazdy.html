@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 <br/>
-<table class="table table-light table-striped" style="opacity: 0.75;">
+<table class="table table-light table-striped" style="opacity: 0.9;">
   <thead>
     <tr>
 
@@ -25,10 +25,10 @@
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.model }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.rejestracja }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.vin }}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.date_przeglad }}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.dni_przeglad }}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.date_tacho }}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.dni_tacho }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.date_przeglad %} {{ pojazd.date_przeglad }} {% endif %}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.dni_przeglad %} {{ pojazd.dni_przeglad }} {% endif %}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.date_tacho %} {{ pojazd.date_tacho }} {% endif %}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.dni_tacho %} {{ pojazd.dni_tacho }} {% endif %}</td>
   </tr>
   {% endfor %}
   </tbody>
