@@ -10,6 +10,8 @@ class Pojazd(models.Model):
     przeglad = models.DateField()
     tachograf = models.DateField()
     data_dodania = models.DateTimeField()
+    picture = models.ImageField()
+
     def dni_przeglad(self):
         today = datetime.date.today()
         days = self.przeglad - today

@@ -15,11 +15,11 @@
         <hr>
         <p class="card-text">Nr VIN: {{ pojazd.vin }}</p>
         <hr>
-        <p class="card-text">Data przeglądu: {{ pojazd.przeglad }}</p>
+        <p class="card-text">Data przeglądu: {{ pojazd.date_przeglad }}</p>
         <hr>
         <p class="card-text">Do przeglądu zostało {{ pojazd.dni_przeglad }}</p>
         <hr>
-        <p class="card-text">Data legalizacji: {{ pojazd.tachograf }}</p>
+        <p class="card-text">Data legalizacji: {{ pojazd.date_tacho}}</p>
         <hr>
         <p class="card-text">Do legalizacji zostało {{ pojazd.dni_tacho }}</p>
         <hr>
@@ -27,5 +27,8 @@
 
   </div>
 </div>
+    <div class="col-8">
+        <img src="{{ pojazd.picture.url }}" class="img-fluid"  />
+    </div>
 </div>
 {% endblock %}
