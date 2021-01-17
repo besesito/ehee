@@ -3,14 +3,13 @@ import datetime
 
 class Pojazd(models.Model):
     nazwa = models.TextField()
-    marka = models.TextField()
-    model = models.TextField()
-    rejestracja = models.TextField()
-    vin = models.TextField()
-    przeglad = models.DateField()
-    tachograf = models.DateField()
-    data_dodania = models.DateTimeField()
-    picture = models.ImageField()
+    marka = models.TextField(blank=True)
+    model = models.TextField(blank=True)
+    rejestracja = models.TextField(blank=True)
+    vin = models.TextField(blank=True)
+    przeglad = models.DateField(blank=True)
+    tachograf = models.DateField(blank=True)
+    picture = models.ImageField(blank=True)
 
     def dni_przeglad(self):
         today = datetime.date.today()
@@ -26,5 +25,3 @@ class Pojazd(models.Model):
         return self.przeglad.strftime("%d-%m-%Y")
     def date_tacho(self):
         return self.tachograf.strftime("%d-%m-%Y")
-    def date_dodany(self):
-        return self.data_dodania.strftime("%d-%m-%Y")

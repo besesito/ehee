@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Pojazd
-from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
 @login_required(login_url="/login")
@@ -21,7 +20,7 @@ def dodaj (request):
             pojazd.przeglad = request.POST['przeglad']
             pojazd.tachograf = request.POST['tachograf']
             pojazd.vin = request.POST['vin']
-            pojazd.data_dodania = timezone.datetime.now()
+            pojazd.picture = request.FILES['picture']
             pojazd.save()
             return render(request, 'pojazdy/dodaj.html', {'info' : 'Pojazd został pymyślnie dodany'})
         return render(request, 'pojazdy/dodaj.html', {'danger' : 'Proszę wpisać nazwę pojazdu'})

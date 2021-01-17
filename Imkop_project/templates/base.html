@@ -57,17 +57,17 @@ body {
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-        <div class="container" >
-            <a class="navbar-brand" href="{% url 'home' %}">Imkop Monitoring</a>
+        <div class="container" style="font-size: 130%;" >
+            <a style="font-size: 130%;" class="navbar-brand" href="{% url 'home' %}">Imkop Monitoring</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active"  href="https://drive.google.com/drive/folders/1iIzjVPaQzo9bHoxoauxlA0ZfFqNyoRXW?usp=sharing" target="_blank">Nasz dysk 💾</a>
-                    <a class="nav-link active"  href="https://aplikacja.web-sat.pl/web242/" target="_blank">Aplikacja GPS 🛰</a>
-                    <a class="nav-link active"  href="{% url 'raport' %}">Raporty 📊</a>
-                    <a class="nav-link active"  href="{% url 'pojazdy' %}">Pojazdy 🚜</a>
+                    <a class="nav-link active"  href="https://drive.google.com/drive/folders/1iIzjVPaQzo9bHoxoauxlA0ZfFqNyoRXW?usp=sharing" target="_blank">Nasz dysk <i class="bi bi-disc"></i></a>
+                    <a class="nav-link active"  href="https://aplikacja.web-sat.pl/web242/" target="_blank">Aplikacja GPS <i class="bi bi-geo-alt"></i></a>
+                    <a class="nav-link active"  href="{% url 'raport' %}">Raporty <i class="bi bi-clipboard-data"></i></a>
+                    <a class="nav-link active"  href="{% url 'pojazdy' %}">Pojazdy <i class="bi bi-truck"></i></a>
                     <a class="nav-link active"  href="">Przeglądy <i class="bi bi-gear"></i></a>
                     <a class="nav-link active"  href="{% url 'dodaj' %}">Dodaj <i class="bi bi-plus-circle"></i></a>
 

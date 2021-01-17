@@ -3,7 +3,7 @@
 {% load static %}
 <br>
 <div class="row">
-<div class="card text-dark bg-light mb-3 col-4">
+<div class="card text-dark bg-light mb-3 col-4" style="opacity: 0.75;">
     <div class="card-body">
         <h3 class="card-title">{{ pojazd.nazwa }}</h3>
         <hr>
@@ -22,13 +22,14 @@
         <p class="card-text">Data legalizacji: {{ pojazd.date_tacho}}</p>
         <hr>
         <p class="card-text">Do legalizacji zostało {{ pojazd.dni_tacho }}</p>
-        <hr>
-        <p class="card-text">Pojazd dodany {{ pojazd.date_dodany }}</p>
+
 
   </div>
 </div>
     <div class="col-8">
-        <img src="{{ pojazd.picture.url }}" class="img-fluid"  />
+        {% if pojazd.picture %}
+        <img src="{{ pojazd.picture.url }}" class="img-thumbnail img-fluid"  />
+        {% endif %}
     </div>
 </div>
 {% endblock %}

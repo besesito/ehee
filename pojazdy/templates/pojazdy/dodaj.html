@@ -19,7 +19,7 @@
     Dodaj pojazd:
 </div>
 <br/>
-<div class="col-4">
+<div class="col-6" style="opacity: 0.80;">
 <form method="POST" action="{% url 'dodaj' %}" enctype="multipart/form-data">
     {% csrf_token %}
 
@@ -46,18 +46,18 @@
     <div class="form-group row">
   <label for="example-date-input" class="col-5 col-form-label">Data przeglądu</label>
   <div class="col-7">
-    <input class="form-control" type="date"  value="2021-02-01" id="example-date-input" name="przeglad">
+    <input class="form-control" type="date" id="example-date-input" name="przeglad">
   </div>
     </div>
 
     <div class="form-group row pt-3">
   <label for="example-date-input2" class="col-5 col-form-label">Data legalizacji</label>
   <div class="col-7">
-    <input class="form-control" type="date"  value="2021-02-01" id="example-date-input2" name="tachograf">
+    <input class="form-control" type="date"  id="example-date-input2" name="tachograf">
   </div>
     </div>
     <div class="input-group pt-3">
-  <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+  <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="picture">
 
 </div>
     <br/>
