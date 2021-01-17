@@ -1,14 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+<br>
+<div class="row">
+<div class="card text-dark bg-light mb-3 col-4">
+    <div class="card-body">
+        <h3 class="card-title">{{ pojazd.nazwa }}</h3>
+        <hr>
+        <p class="card-text">Marka: {{ pojazd.marka }}</p>
+        <hr>
+        <p class="card-text">Model: {{ pojazd.model }}</p>
+        <hr>
+        <p class="card-text">Nr rejestracyjny: {{ pojazd.rejestracja }}</p>
+        <hr>
+        <p class="card-text">Nr VIN: {{ pojazd.vin }}</p>
+        <hr>
+        <p class="card-text">Data przeglądu: {{ pojazd.przeglad }}</p>
+        <hr>
+        <p class="card-text">Do przeglądu zostało {{ pojazd.dni_przeglad }}</p>
+        <hr>
+        <p class="card-text">Data legalizacji: {{ pojazd.tachograf }}</p>
+        <hr>
+        <p class="card-text">Do legalizacji zostało {{ pojazd.dni_tacho }}</p>
+        <hr>
+        <p class="card-text">Pojazd dodany {{ pojazd.date_dodany }}</p>
 
-<div class="row justify-content-between">
-    <div class="col-4">
-      One of two columns
-    </div>
-    <div class="col-4">
-      One of two columns
-    </div>
   </div>
-
+</div>
+</div>
 {% endblock %}

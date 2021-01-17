@@ -24,3 +24,5 @@ class Pojazd(models.Model):
         return self.przeglad.strftime("%d-%m-%Y")
     def date_tacho(self):
         return self.tachograf.strftime("%d-%m-%Y")
+    def date_dodany(self):
+        return self.data_dodania.strftime("%d-%m-%Y")
