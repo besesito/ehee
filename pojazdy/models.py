@@ -7,8 +7,8 @@ class Pojazd(models.Model):
     model = models.TextField(blank=True)
     rejestracja = models.TextField(blank=True)
     vin = models.TextField(blank=True)
-    przeglad = models.DateField(blank=True)
-    tachograf = models.DateField(blank=True)
+    przeglad = models.DateField(default=datetime.date.today(), blank=True, null=True)
+    tachograf = models.DateField(default=datetime.date.today(), blank=True, null=True)
     picture = models.ImageField(blank=True)
 
     def dni_przeglad(self):
