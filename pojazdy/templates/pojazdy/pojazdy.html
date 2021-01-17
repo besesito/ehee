@@ -2,8 +2,7 @@
 {% block content %}
 {% load static %}
 <br/>
-<div class="container">
- <table class="table table-dark table-striped">
+<table class="table table-light table-striped">
   <thead>
     <tr>
 
@@ -20,23 +19,21 @@
   </thead>
   <tbody>
   {% for pojazd in pojazdy.all %}
-
   <tr>
-
-      <td>{{ pojazd.nazwa }}</td>
-      <td>{{ pojazd.marka }}</td>
-      <td>{{ pojazd.model }}</td>
-      <td>{{ pojazd.rejestracja }}</td>
-      <td>{{ pojazd.vin }}</td>
-      <td>{{ pojazd.date_przeglad }}</td>
-      <td>{{ pojazd.dni_przeglad }}</td>
-      <td>{{ pojazd.date_tacho }}</td>
-      <td>{{ pojazd.dni_tacho }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;"><i class="bi bi-search"></i>  {{ pojazd.nazwa }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.marka }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.model }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.rejestracja }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.vin }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.date_przeglad }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.dni_przeglad }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.date_tacho }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.dni_tacho }}</td>
   </tr>
   {% endfor %}
   </tbody>
 </table>
-    </div>
+
 
 
 {% endblock %}

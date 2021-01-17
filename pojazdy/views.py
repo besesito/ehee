@@ -1,15 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Pojazd
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-import operator
 
 @login_required(login_url="/login")
 def pojazdy (request):
     lista_pojazdow = Pojazd.objects.order_by('przeglad')
-
-
     return render(request, 'pojazdy/pojazdy.html', {'pojazdy':lista_pojazdow})
+
 
 @login_required(login_url="/login")
 def dodaj (request):
@@ -28,4 +26,9 @@ def dodaj (request):
             return render(request, 'pojazdy/dodaj.html', {'info' : 'Pojazd został pymyślnie dodany'})
         return render(request, 'pojazdy/dodaj.html', {'danger' : 'Proszę wpisać nazwę pojazdu'})
     return render(request, 'pojazdy/dodaj.html')
+
+@login_required(login_url="/login")
+def detail(request, pojazd_id):
+    pojazd = get_object_or_404(Pojazd, pk=pojazd_id)
+    return render(request, 'pojazdy/detail.html', {'pojazd':pojazd})
 
