@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<div class="container pt-3">
+<div class="container pt-4">
 <form method="POST" action="{% url 'wynik' %}">
     {% csrf_token %}
     <div class="form-floating">
@@ -9,7 +9,9 @@
         <label style="color: #000000; font-size: 140%;" for="floatingTextarea2">Wklej tutaj raport</label>
     </div>
     <br>
+    <div class="text-center">
     <input class="btn btn-success btn-lg" type="submit" value="Policz kursy"/>
+        </div>
 </form>
 </div>
 
