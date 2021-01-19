@@ -18,6 +18,8 @@
         <p class="card-text">Data przeglądu: {{ pojazd.date_przeglad }} {% endif %}</p>
         {% if pojazd.dni_przeglad %}<hr>
         <p class="card-text">Do przeglądu zostało {{ pojazd.dni_przeglad }} {% endif %}</p>
+        {% if pojazd.tachograf_info %}<hr>
+        <p class="card-text">Model tachografu: {{ pojazd.tachograf_info }} {% endif %}</p>
         {% if pojazd.date_tacho %}<hr>
         <p class="card-text">Data legalizacji: {{ pojazd.date_tacho }} {% endif %}</p>
         {% if pojazd.dni_tacho %}<hr>

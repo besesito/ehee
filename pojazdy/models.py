@@ -8,7 +8,9 @@ class Pojazd(models.Model):
     rejestracja = models.TextField(blank=True)
     vin = models.TextField(blank=True)
     przeglad = models.DateField(blank=True, null=True)
-    tachograf = models.DateField(blank=True, null=True)
+    legalizacja = models.DateField(blank=True, null=True)
+    tachograf_info = models.TextField(blank=True)
+    pobrane_dane = models.BooleanField(default=False)
     picture = models.ImageField(blank=True)
 
     def dni_przeglad(self):
@@ -19,11 +21,11 @@ class Pojazd(models.Model):
             days = self.przeglad - today
             return "{} dni".format(days.days)
     def dni_tacho(self):
-        if self.tachograf == None:
+        if self.legalizacja == None:
             pass
         else:
             today = datetime.date.today()
-            days = self.tachograf - today
+            days = self.legalizacja - today
             return "{} dni".format(days.days)
     def __str__(self):
         return self.nazwa
@@ -33,7 +35,7 @@ class Pojazd(models.Model):
         else:
             return self.przeglad.strftime("%d-%m-%Y")
     def date_tacho(self):
-        if self.tachograf == None:
+        if self.legalizacja == None:
             pass
         else:
-            return self.tachograf.strftime("%d-%m-%Y")
+            return self.legalizacja.strftime("%d-%m-%Y")

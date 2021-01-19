@@ -8,7 +8,7 @@ def login(request):
         if user is not None:
             username = request.POST['username']
             auth.login(request, user)
-            return render(request, 'raport/home.html', {'info': 'Siemanko {} mam nadzieję że masz wspaniały dziś dzień! 👍'.format(username)})
+            return render(request, 'raport/home.html')
         else:
             return render(request, 'login/login.html', {'info': "😂 Skleroza? Próbuj dalej! 🤣"})
     else:

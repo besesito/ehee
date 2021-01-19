@@ -18,10 +18,12 @@
 <div style="font-family: 'Alfa Slab One', cursive; font-size: 300%; color: #ffffff;">
     Dodaj pojazd:
 </div>
-<br/>
-<div class="col-6" style="opacity: 0.80;">
 <form method="POST" action="{% url 'dodaj' %}" enctype="multipart/form-data">
     {% csrf_token %}
+<div class="container card text-white bg-dark" style="border: 2px solid white;margin: 1%; padding: 3%; opacity: 0.97;">
+    <div class="row">
+    <div class="col-6" style="opacity: 1;">
+
 
     <div class="input-group mb-3">
         <input placeholder="Nazwa pojazdu" class="form-control" type="text" name="nazwa"/>
@@ -44,26 +46,34 @@
     </div>
 
     <div class="form-group row">
-  <label for="example-date-input" class="col-5 col-form-label">Data przeglądu</label>
-  <div class="col-7">
+  <label for="example-date-input" class="col-3 col-form-label">Data przeglądu</label>
+  <div class="col-9">
     <input class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input" name="przeglad">
   </div>
     </div>
+        <div class="input-group pt-3">
+  <input type="file" class="form-control"  id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="picture">
+    </div>
+    <br/>
 
-    <div class="form-group row pt-3">
-  <label for="example-date-input2" class="col-5 col-form-label">Data legalizacji</label>
-  <div class="col-7">
-    <input class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input2" name="tachograf">
+</div>
+    <div class="col-6" style="opacity: 1;">
+      <div class="input-group mb-3">
+        <input placeholder="Model tachografu" class="form-control" type="text" name="tachograf_info"/>
+    </div>
+            <div class="form-group row pt-3">
+  <label for="example-date-input2" class="col-3 col-form-label">Data legalizacji</label>
+  <div class="col-9">
+    <input class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input2" name="legalizacja">
   </div>
     </div>
-    <div class="input-group pt-3">
-  <input type="file" class="form-control"  id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="picture">
-
+    </div>
 </div>
-    <br/>
-    <input class="btn btn-light" type="submit" value="Dodaj pojazd!"/>
-
+    <br>
+    <div class="text-center">
+    <input class="btn btn-success btn-lg" type="submit" value="Dodaj pojazd!"/>
+        </div>
+    </div>
 </form>
-</div>
 
 {% endblock %}

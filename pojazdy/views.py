@@ -25,9 +25,10 @@ def dodaj (request):
             pojazd.przeglad = request.POST['przeglad']
             if pojazd.przeglad == "":
                 pojazd.przeglad = None
-            pojazd.tachograf = request.POST['tachograf']
-            if pojazd.tachograf == "":
-                pojazd.tachograf = None
+            pojazd.legalizacja = request.POST['legalizacja']
+            if pojazd.legalizacja == "":
+                pojazd.legalizacja = None
+            pojazd.tachograf_info = request.POST['tachograf_info']
             pojazd.save()
             return render(request, 'pojazdy/dodaj.html', {'info' : 'Pojazd został pymyślnie dodany'})
         return render(request, 'pojazdy/dodaj.html', {'danger' : 'Proszę wpisać nazwę pojazdu'})
