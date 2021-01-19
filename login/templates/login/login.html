@@ -6,6 +6,7 @@
     {% if info %}
     <h4>{{ info }}</h4>
     {% endif %}
+
     <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
     Login:

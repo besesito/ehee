@@ -8,28 +8,21 @@
     <tr>
 
         <th scope="col">Nazwa</th>
-        <th scope="col">Marka</th>
-        <th scope="col">Model</th>
         <th scope="col">Nr rejestracyjny</th>
         <th scope="col">VIN</th>
         <th scope="col">Przegląd</th>
         <th scope="col">Dni do przegladu </th>
-        <th scope="col">Legalizacja</th>
-        <th scope="col">Dni do legalizacji</th>
+
     </tr>
   </thead>
   <tbody>
   {% for pojazd in pojazdy.all %}
   <tr>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;"><i class="bi bi-search"></i>  {{ pojazd.nazwa }}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.marka }}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.model }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.rejestracja }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.vin }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.date_przeglad %} {{ pojazd.date_przeglad }} {% endif %}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.dni_przeglad %} {{ pojazd.dni_przeglad }} {% endif %}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.date_tacho %} {{ pojazd.date_tacho }} {% endif %}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.dni_tacho %} {{ pojazd.dni_tacho }} {% endif %}</td>
   </tr>
   {% endfor %}
   </tbody>

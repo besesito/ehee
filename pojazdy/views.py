@@ -4,8 +4,13 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url="/login")
 def pojazdy (request):
-    lista_pojazdow = Pojazd.objects.order_by('przeglad')
+    lista_pojazdow = Pojazd.objects.order_by('nazwa')
     return render(request, 'pojazdy/pojazdy.html', {'pojazdy':lista_pojazdow})
+
+@login_required(login_url="/login")
+def przeglady (request):
+    lista_pojazdow = Pojazd.objects.order_by('przeglad').exclude(przeglad=None)
+    return render(request, 'pojazdy/przeglady.html', {'pojazdy':lista_pojazdow})
 
 
 @login_required(login_url="/login")
