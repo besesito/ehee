@@ -44,3 +44,29 @@ def detail(request, pojazd_id):
     pojazd = get_object_or_404(Pojazd, pk=pojazd_id)
     return render(request, 'pojazdy/detail.html', {'pojazd':pojazd})
 
+@login_required(login_url="/login")
+def edit(request, pojazd_id):
+    pojazd = get_object_or_404(Pojazd, pk=pojazd_id)
+    if request.method == 'POST':
+        if request.POST['nazwa']:
+            pojazd.nazwa = request.POST['nazwa']
+            pojazd.marka = request.POST['marka']
+            pojazd.model = request.POST['model']
+            pojazd.rejestracja = request.POST['rejestracja']
+            pojazd.vin = request.POST['vin']
+            try:
+                pojazd.picture = request.FILES['picture']
+            except:
+                pass
+            pojazd.przeglad = request.POST['przeglad']
+            if pojazd.przeglad == "":
+                pojazd.przeglad = None
+            pojazd.legalizacja = request.POST['legalizacja']
+            if pojazd.legalizacja == "":
+                pojazd.legalizacja = None
+            pojazd.tachograf_info = request.POST['tachograf_info']
+            pojazd.save()
+            return render(request, 'pojazdy/dodaj.html', {'info' : 'Pojazd został pymyślnie edytowany'})
+        return render(request, 'pojazdy/dodaj.html', {'danger' : 'Proszę wpisać nazwę pojazdu'})
+    return render(request, 'pojazdy/edit.html', {'pojazd':pojazd})
+

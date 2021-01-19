@@ -8,6 +8,7 @@ urlpatterns = [
     path('przeglady', views.przeglady, name = 'przeglady'),
     path('dodaj', views.dodaj, name = 'dodaj'),
     path('<int:pojazd_id>', views.detail, name = 'detail'),
+    path('edit/<int:pojazd_id>', views.edit, name = 'edit'),
 
 
 
