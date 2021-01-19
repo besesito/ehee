@@ -5,7 +5,7 @@
 <div class="row">
 <div class="card text-dark bg-light mb-3 col-4" style="opacity: 0.8;">
     <div class="card-body">
-        <h3 class="card-title">{{ pojazd.nazwa }}</h3>
+        <h3 class="card-title">{{ pojazd.nazwa }} <a style="color: black;" href="{% url 'edit' pojazd.id %}"><i class="bi bi-pencil-square"></i></a> </h3>
         {% if pojazd.marka %}<hr>
         <p class="card-text">Marka: {{ pojazd.marka }} {% endif %}</p>
         {% if pojazd.model %}<hr>

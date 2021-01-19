@@ -18,7 +18,7 @@
   <tbody>
   {% for pojazd in pojazdy.all %}
   <tr>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;"><i class="bi bi-search"></i>  {{ pojazd.nazwa }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;"><a style="color: black;" href="{% url 'edit' pojazd.id %}"><i class="bi bi-pencil-square"></i></a>  {{ pojazd.nazwa }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.rejestracja }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.vin }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.date_przeglad %} {{ pojazd.date_przeglad }} {% endif %}</td>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import operator
 from django.contrib.auth.decorators import login_required
 
@@ -23,3 +23,5 @@ def wynik(request):
             slownik[pojazd] = fulltext.count(pojazd)
         kursy = sorted(slownik.items(), key=operator.itemgetter(1), reverse=True)
         return render(request, 'raport/wynik.html', {'kursy': kursy })
+    else:
+        return render(request, 'raport/raport.html')

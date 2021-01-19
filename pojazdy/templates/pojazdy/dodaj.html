@@ -15,8 +15,8 @@
 </div>
 {% endif %}
 <br>
-<div style="font-family: 'Alfa Slab One', cursive; font-size: 300%; color: #ffffff;">
-    Dodaj pojazd:
+<div class="text-center" style="font-family: 'Alfa Slab One', cursive; font-size: 300%; color: #ffffff;">
+    Dodaj pojazd
 </div>
 <form method="POST" action="{% url 'dodaj' %}" enctype="multipart/form-data">
     {% csrf_token %}
@@ -75,7 +75,7 @@
 </div>
     <br>
     <div class="text-center">
-    <input class="btn btn-success btn-lg" type="submit" value="Dodaj pojazd!"/>
+    <input class="btn btn-success btn-lg" type="submit" value="Dodaj pojazd"/>
         </div>
     </div>
 </form>
