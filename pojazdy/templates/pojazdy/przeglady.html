@@ -3,7 +3,7 @@
 {% load static %}
 <br/>
 <div class="container " style=" opacity: 0.97; ">
-<table class="table table-light table-striped" style="">
+<table class="table table-light" style="">
   <thead>
     <tr>
 
@@ -18,11 +18,11 @@
   <tbody>
   {% for pojazd in pojazdy.all %}
   <tr>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;"><a style="color: black;" href="{% url 'edit' pojazd.id %}"><i class="bi bi-pencil-square"></i></a>  {{ pojazd.nazwa }}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.rejestracja }}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.vin }}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.date_przeglad %} {{ pojazd.date_przeglad }} {% endif %}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;{% if pojazd.dni_przeglad < 1 %} color: red; {% elif pojazd.dni_przeglad < 10 %} color: orange; {% elif pojazd.dni_przeglad > 9 %} color: green;  {% endif %}">{{ pojazd.dni_przeglad }} dni</td>
+      <td {% if pojazd.dni_przeglad < 1 %} class="table-danger" {% elif pojazd.dni_przeglad < 10 %} class="table-warning" {% elif pojazd.dni_przeglad > 9 %} class="table-success"  {% endif %}onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;"><a style="color: black;" href="{% url 'edit' pojazd.id %}"><i class="bi bi-pencil-square"></i></a>  {{ pojazd.nazwa }}</td>
+      <td {% if pojazd.dni_przeglad < 1 %} class="table-danger" {% elif pojazd.dni_przeglad < 10 %} class="table-warning" {% elif pojazd.dni_przeglad > 9 %} class="table-success"  {% endif %}onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.rejestracja }}</td>
+      <td {% if pojazd.dni_przeglad < 1 %} class="table-danger" {% elif pojazd.dni_przeglad < 10 %} class="table-warning" {% elif pojazd.dni_przeglad > 9 %} class="table-success"  {% endif %}onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.vin }}</td>
+      <td {% if pojazd.dni_przeglad < 1 %} class="table-danger" {% elif pojazd.dni_przeglad < 10 %} class="table-warning" {% elif pojazd.dni_przeglad > 9 %} class="table-success"  {% endif %}onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.date_przeglad %} {{ pojazd.date_przeglad }} {% endif %}</td>
+      <td {% if pojazd.dni_przeglad < 1 %} class="table-danger" {% elif pojazd.dni_przeglad < 10 %} class="table-warning" {% elif pojazd.dni_przeglad > 9 %} class="table-success"  {% endif %}onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.dni_przeglad }} dni</td>
   </tr>
   {% endfor %}
   </tbody>
