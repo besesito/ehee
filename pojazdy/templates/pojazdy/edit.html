@@ -44,38 +44,57 @@
         <input placeholder="Numer VIN" value="{{ pojazd.vin }}" class="form-control" type="text" name="vin"/>
     </div>
 
-    <div class="form-group row">
-  <label for="example-date-input"  class="col-3 col-form-label">Data przeglądu</label>
+
+
+
+    <br/>
+
+</div>
+    <div class="col-6" style="opacity: 1;">
+      <div class="input-group">
+  <label class="input-group-text" for="inputGroupSelect01">Marka tachografu</label>
+  <select class="form-select" name="tachograf_info" id="inputGroupSelect01">
+    <option selected value="{{ pojazd.tachograf_info }}">{{ pojazd.tachograf_info }}</option>
+    <option value="Efas">Efas</option>
+    <option value="VDO">VDO</option>
+    <option value="Stoneridge">Stoneridge</option>
+  </select>
+</div>
+            <div class="form-group row pt-3">
+  <label  class="col-3 col-form-label">Data legalizacji</label>
   <div class="col-9">
-    <input class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input" name="przeglad">
+    <input class="form-control" type="date" value="{{ pojazd.date_tacho }}"  name="legalizacja">
   </div>
     </div>
-               <div class="form-group row pt-3">
+           <div class="form-group row pt-3">
+  <label for="example-date-input" class="col-3 col-form-label">Data przeglądu</label>
+  <div class="col-9">
+    <input class="form-control" type="date" value="{{ pojazd.date_przeglad }}" id="example-date-input" name="przeglad">
+  </div>
+    </div>
+         <div class="form-group row pt-3">
   <label for="example-date-input" class="col-3 col-form-label">Zdjęcie</label>
   <div class="col-9">
     <input type="file" class="form-control"  id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="picture">
   </div>
     </div>
-    <br/>
-
+        <div class="input-group pt-3">
+  <label class="input-group-text" for="inputGroupSelect02">Firma</label>
+  <select class="form-select" name="firma" id="inputGroupSelect02">
+    <option selected value="{{ pojazd.firma }}">{{ pojazd.firma }}</option>
+    <option value="Imkop">Imkop</option>
+    <option value="Imkop 2">Imkop 2</option>
+    <option value="Imkop 3">Imkop 3</option>
+  </select>
 </div>
-    <div class="col-6" style="opacity: 1;">
-      <div class="input-group mb-3">
-        <input placeholder="Model tachografu" value="{{ pojazd.tachograf_info }}" class="form-control" type="text" name="tachograf_info"/>
     </div>
-            <div class="form-group row pt-3">
-  <label for="example-date-input2" class="col-3 col-form-label">Data legalizacji</label>
-  <div class="col-9">
-    <input class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input2" name="legalizacja">
-  </div>
-    </div>
-    </div>
+
 </div>
     <br>
     <div class="text-center">
     <input class="btn btn-success btn-lg" type="submit" value="Edytuj pojazd"/>
         </div>
+
     </div>
 </form>
-
 {% endblock %}

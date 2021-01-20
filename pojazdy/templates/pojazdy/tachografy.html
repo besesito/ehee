@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<br/>
+<div class="container " style=" opacity: 0.97; ">
+<table class="table table-light table-striped" style="">
+  <thead>
+    <tr>
+
+        <th scope="col">Nazwa</th>
+        <th scope="col">Nr rejstracyjny</th>
+        <th scope="col">Legalizacja tachografu</th>
+        <th scope="col">Dni do legalizacji</th>
+        <th scope="col">Pobrane dane</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for pojazd in pojazdy.all %}
+  <tr>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;"><a style="color: black;" href="{% url 'edit' pojazd.id %}"><i class="bi bi-pencil-square"></i></a>  {{ pojazd.nazwa }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.rejestracja }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.date_tacho }}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;{% if pojazd.dni_tacho < 1 %} color: red; {% elif pojazd.dni_tacho < 10 %} color: orange; {% elif pojazd.dni_tacho > 9 %} color: green;  {% endif %}">{{ pojazd.dni_tacho }} dni</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.pobrane_dane %}<i class="bi bi-hand-thumbs-up"></i> Pobrane  {% else %}<i class="bi bi-hand-thumbs-down"></i> Niepobrane  {% endif %}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+{% endblock %}

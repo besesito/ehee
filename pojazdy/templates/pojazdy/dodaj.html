@@ -45,38 +45,57 @@
         <input placeholder="Numer VIN" class="form-control" type="text" name="vin"/>
     </div>
 
-    <div class="form-group row">
-  <label for="example-date-input" class="col-3 col-form-label">Data przeglądu</label>
-  <div class="col-9">
-    <input class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input" name="przeglad">
-  </div>
-    </div>
-            <div class="form-group row pt-3">
-  <label for="example-date-input" class="col-3 col-form-label">Zdjęcie</label>
-  <div class="col-9">
-    <input type="file" class="form-control"  id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="picture">
-  </div>
-    </div>
+
+
 
     <br/>
 
 </div>
     <div class="col-6" style="opacity: 1;">
-      <div class="input-group mb-3">
-        <input placeholder="Model tachografu" class="form-control" type="text" name="tachograf_info"/>
-    </div>
+      <div class="input-group">
+  <label class="input-group-text" for="inputGroupSelect01">Marka tachografu</label>
+  <select class="form-select" name="tachograf_info" id="inputGroupSelect01">
+    <option selected value="">brak</option>
+    <option value="efas">Efas</option>
+    <option value="vdo">VDO</option>
+    <option value="stoneridge">Stoneridge</option>
+  </select>
+</div>
             <div class="form-group row pt-3">
   <label for="example-date-input2" class="col-3 col-form-label">Data legalizacji</label>
   <div class="col-9">
     <input class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input2" name="legalizacja">
   </div>
     </div>
+           <div class="form-group row pt-3">
+  <label for="example-date-input" class="col-3 col-form-label">Data przeglądu</label>
+  <div class="col-9">
+    <input class="form-control" type="date" value="YYYY-MM-DD" id="example-date-input" name="przeglad">
+  </div>
     </div>
+         <div class="form-group row pt-3">
+  <label for="example-date-input" class="col-3 col-form-label">Zdjęcie</label>
+  <div class="col-9">
+    <input type="file" class="form-control"  id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="picture">
+  </div>
+    </div>
+        <div class="input-group pt-3">
+  <label class="input-group-text" for="inputGroupSelect02">Firma</label>
+  <select class="form-select" name="firma" id="inputGroupSelect02">
+    <option selected value="">brak</option>
+    <option value="Imkop">Imkop</option>
+    <option value="Imkop 2">Imkop 2</option>
+    <option value="Imkop 3">Imkop 3</option>
+  </select>
+</div>
+    </div>
+
 </div>
     <br>
     <div class="text-center">
     <input class="btn btn-success btn-lg" type="submit" value="Dodaj pojazd"/>
         </div>
+
     </div>
 </form>
 

@@ -8,6 +8,11 @@ def pojazdy (request):
     return render(request, 'pojazdy/pojazdy.html', {'pojazdy':lista_pojazdow})
 
 @login_required(login_url="/login")
+def tachografy (request):
+    lista_pojazdow = Pojazd.objects.order_by('legalizacja').exclude(legalizacja=None)
+    return render(request, 'pojazdy/tachografy.html', {'pojazdy':lista_pojazdow})
+
+@login_required(login_url="/login")
 def przeglady (request):
     lista_pojazdow = Pojazd.objects.order_by('przeglad').exclude(przeglad=None)
     return render(request, 'pojazdy/przeglady.html', {'pojazdy':lista_pojazdow})
@@ -22,6 +27,7 @@ def dodaj (request):
             pojazd.marka = request.POST['marka']
             pojazd.model = request.POST['model']
             pojazd.rejestracja = request.POST['rejestracja']
+            pojazd.firma = request.POST['firma']
             pojazd.vin = request.POST['vin']
             try:
                 pojazd.picture = request.FILES['picture']
@@ -53,6 +59,7 @@ def edit(request, pojazd_id):
             pojazd.marka = request.POST['marka']
             pojazd.model = request.POST['model']
             pojazd.rejestracja = request.POST['rejestracja']
+            pojazd.firma = request.POST['firma']
             pojazd.vin = request.POST['vin']
             try:
                 pojazd.picture = request.FILES['picture']

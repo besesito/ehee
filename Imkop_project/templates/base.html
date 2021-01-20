@@ -7,10 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.79.0">
-    <title>Imkop Monitoring</title>
+    <title>FLOTA IMKOP CRM</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Qwigley&display=swap" rel="stylesheet">
+
 
     <!-- Bootstrap core CSS -->
     <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -44,22 +46,28 @@
       }
       body {
 
-  background:  url('http://127.0.0.1:8000/static/tapeta.png') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+     background:  url('http://127.0.0.1:8000/static/tapeta.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    }
 
-}
-body {
-  color: #ffffff;
-}
+    body {
+    color: #ffffff;
+    }
+
+    h1 {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 600%;
+    color: #ffffff;
+    }
 </style>
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
         <div class="container" style="font-size: 120%;" >
-            <a style="font-size: 120%;" class="navbar-brand" href="{% url 'home' %}">Imkop Monitoring</a>
+            <a style="font-size: 120%;" class="navbar-brand" href="{% url 'home' %}">FLOTA IMKOP CRM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -71,6 +79,7 @@ body {
                     <a class="nav-link active"  href="{% url 'raport' %}">Raporty <i class="bi bi-clipboard-data"></i></a>
                     <a class="nav-link active"  href="{% url 'pojazdy' %}">Pojazdy <i class="bi bi-truck"></i></a>
                     <a class="nav-link active"  href="{% url 'przeglady' %}">Przeglądy <i class="bi bi-gear"></i></a>
+                    <a class="nav-link active"  href="{% url 'tachografy' %}">Tachografy <i class="bi bi-speedometer"></i></a>
                     <a class="nav-link active"  href="{% url 'dodaj' %}">Dodaj <i class="bi bi-plus-circle"></i></a>
 
                 </div>

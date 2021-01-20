@@ -22,7 +22,7 @@
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.rejestracja }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{{ pojazd.vin }}</td>
       <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.date_przeglad %} {{ pojazd.date_przeglad }} {% endif %}</td>
-      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;">{% if pojazd.dni_przeglad %} {{ pojazd.dni_przeglad }} {% endif %}</td>
+      <td onclick="window.location='{% url 'detail' pojazd.id %}';" style="cursor: pointer;{% if pojazd.dni_przeglad < 1 %} color: red; {% elif pojazd.dni_przeglad < 10 %} color: orange; {% elif pojazd.dni_przeglad > 9 %} color: green;  {% endif %}">{{ pojazd.dni_przeglad }} dni</td>
   </tr>
   {% endfor %}
   </tbody>
