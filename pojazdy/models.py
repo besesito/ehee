@@ -49,7 +49,7 @@ class Pojazd(models.Model):
             return self.legalizacja.strftime("%d-%m-%Y")
 
     def tacho_edit(self):
-        if self.przeglad == None:
+        if self.legalizacja == None:
             pass
         else:
             return self.legalizacja.strftime("%Y-%m-%d")

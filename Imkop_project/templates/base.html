@@ -66,8 +66,8 @@
 </head>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-        <div class="container" style="font-size: 120%;" >
-            <a style="font-size: 120%;" class="navbar-brand" href="{% url 'home' %}">FLOTA IMKOP CRM</a>
+        <div class="container" style="font-size: 110%;" >
+            <a style="font-size: 110%;" class="navbar-brand" href="{% url 'home' %}">FLOTA IMKOP CRM</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -77,11 +77,20 @@
                     <a class="nav-link active"  href="https://drive.google.com/drive/folders/1iIzjVPaQzo9bHoxoauxlA0ZfFqNyoRXW?usp=sharing" target="_blank">Nasz dysk <i class="bi bi-disc"></i></a>
                     <a class="nav-link active"  href="https://aplikacja.web-sat.pl/web242/" target="_blank">Aplikacja GPS <i class="bi bi-geo-alt"></i></a>
                     <a class="nav-link active"  href="{% url 'raport' %}">Raporty <i class="bi bi-clipboard-data"></i></a>
+                    <a class="nav-link active"  href="{% url 'kierowcy' %}">Kierowcy <i class="bi bi-people"></i></a>
                     <a class="nav-link active"  href="{% url 'pojazdy' %}">Pojazdy <i class="bi bi-truck"></i></a>
                     <a class="nav-link active"  href="{% url 'przeglady' %}">Przeglądy <i class="bi bi-gear"></i></a>
                     <a class="nav-link active"  href="{% url 'tachografy' %}">Tachografy <i class="bi bi-speedometer"></i></a>
-                    <a class="nav-link active"  href="{% url 'dodaj' %}">Dodaj <i class="bi bi-plus-circle"></i></a>
+                    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dodaj <i class="bi bi-plus-circle"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'dodaj' %}">Pojazd</a></li>
+            <li><a class="dropdown-item" href="#">Kierowca</a></li>
 
+          </ul>
+        </li>
                 </div>
             </div>
             {% endif %}

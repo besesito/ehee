@@ -5,7 +5,8 @@ class Kierowca(models.Model):
     imie = models.TextField(blank=True)
     nazwisko = models.TextField(blank=True)
     karta = models.TextField(blank=True)
-    pojazd = models.ManyToManyField(Pojazd)
+    telefon = models.TextField(blank=True)
+    pojazd = models.ManyToManyField(Pojazd, blank=True)
 
     def __str__(self):
         return self.nazwisko
