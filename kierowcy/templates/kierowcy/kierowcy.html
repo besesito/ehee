@@ -1,18 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<br/>
-<div class="container " style=" opacity: 0.97; ">
-<table class="table table-light table-striped" style="">
+<br>
+<br>
+<div class="container " style=" opacity: 0.95; ">
+<table class="table table-dark table-striped" style="">
   <thead>
     <tr>
-
         <th scope="col">Imię</th>
         <th scope="col">Nazwisko</th>
         <th scope="col">Nr telefonu</th>
         <th scope="col">Nr karty</th>
-
-
     </tr>
   </thead>
   <tbody>
@@ -22,12 +20,10 @@
       <td>{{ kierowca.nazwisko }}</td>
       <td>{{ kierowca.telefon }}</td>
       <td>{{ kierowca.karta }}</td>
-
   </tr>
   {% endfor %}
   </tbody>
 </table>
 </div>
-
 
 {% endblock %}
