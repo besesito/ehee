@@ -14,6 +14,8 @@
         <p class="card-text">Nr rejestracyjny: {{ pojazd.rejestracja }} {% endif %}</p>
         {% if pojazd.vin %}<hr>
         <p class="card-text">Nr VIN: {{ pojazd.vin }} {% endif %}</p>
+        {% if pojazd.firma %}<hr>
+        <p class="card-text">Firma: {{ pojazd.firma }} {% endif %}</p>
         {% if pojazd.date_przeglad %}<hr>
         <p class="card-text">Data przeglądu: {{ pojazd.date_przeglad }} {% endif %}</p>
         {% if pojazd.dni_przeglad %}<hr>
