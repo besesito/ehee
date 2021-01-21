@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'kierowcy.apps.KierowcyConfig',
     'login.apps.LoginConfig',
     'pojazdy.apps.PojazdyConfig',
     'raport.apps.RaportConfig',
