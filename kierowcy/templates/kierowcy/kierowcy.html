@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<br/>
+<div class="container " style=" opacity: 0.97; ">
+<table class="table table-light table-striped" style="">
+  <thead>
+    <tr>
+
+        <th scope="col">Imię</th>
+        <th scope="col">Nazwisko</th>
+        <th scope="col">Nr karty</th>
+        <th scope="col">Pojazd</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for kierowca in lista.all %}
+  <tr>
+      <td>{{ kierowca.imie }}</td>
+      <td>{{ kierowca.nazwisko }}</td>
+      <td>{{ kierowca.karta }}</td>
+      <td>{{ kierowca.pojazd }}</td>
+
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+
+{% endblock %}
