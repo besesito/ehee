@@ -8,8 +8,8 @@ class Pojazd(models.Model):
     rejestracja = models.TextField(blank=True)
     vin = models.TextField(blank=True)
     firma = models.TextField(blank=True)
-    przeglad = models.DateField(blank=True)
-    legalizacja = models.DateField(blank=True)
+    przeglad = models.DateField(blank=True, null=True)
+    legalizacja = models.DateField(blank=True, null=True)
     tachograf_info = models.TextField(blank=True)
     pobrane_dane = models.BooleanField(default=False)
     picture = models.ImageField(blank=True)
@@ -35,8 +35,21 @@ class Pojazd(models.Model):
             pass
         else:
             return self.przeglad.strftime("%d-%m-%Y")
+
+    def przeglad_edit(self):
+        if self.przeglad == None:
+            pass
+        else:
+            return self.przeglad.strftime("%Y-%m-%d")
+
     def date_tacho(self):
         if self.legalizacja == None:
             pass
         else:
             return self.legalizacja.strftime("%d-%m-%Y")
+
+    def tacho_edit(self):
+        if self.przeglad == None:
+            pass
+        else:
+            return self.legalizacja.strftime("%Y-%m-%d")
